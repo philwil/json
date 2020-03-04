@@ -8,7 +8,11 @@ int main()
     // create JSON values
     json j_object = {{"one", 1}, {"two", 2}};
     json j_array = {1, 2, 4, 8, 16};
-
+    json j_test = {};
+    //j_test["one"] = ;
+    j_test["one"]["two"] = 2;
+    j_test["one"]["two+"] = 3;
+    
     // example for an object
     for (auto& x : j_object.items())
     {
@@ -20,4 +24,12 @@ int main()
     {
         std::cout << "key: " << x.key() << ", value: " << x.value() << '\n';
     }
+
+    std::cout << " test :" << j_test << '\n' ;
+    
+    for (auto& x : j_test.items())
+    {
+        std::cout << "key: " << x.key() << ", value: " << x.value() << '\n';
+    }
+
 }
